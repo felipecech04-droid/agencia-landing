@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           <div className="text-sm text-slate-400">
             &copy; {new Date().getFullYear()}{" "}
-            <span className="text-white">Agencia</span>. Todos los derechos
+            <span className="text-white">Forja</span>. Todos los derechos
             reservados.
           </div>
           <div className="flex gap-6">

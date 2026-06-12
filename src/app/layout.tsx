@@ -13,11 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Agencia - Desarrollo de Software, Bots y Chatbots",
+  title: "Forja - Desarrollo de Software, Bots y Chatbots",
   description:
-    "Creamos soluciones digitales a la medida: software, chatbots inteligentes y automatizaciones para impulsar tu negocio.",
+    "Forjamos soluciones digitales a la medida: software, chatbots inteligentes y automatizaciones para impulsar tu negocio.",
   openGraph: {
-    title: "Agencia - Desarrollo de Software",
+    title: "Forja - Desarrollo de Software",
     description:
       "Software, bots y chatbots a la medida de tu negocio.",
     type: "website",

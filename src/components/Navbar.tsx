@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Logo from "./Logo";
 
 const navItems = [
   { label: "Inicio", href: "#hero" },
@@ -16,9 +17,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#hero" className="text-xl font-bold tracking-tight text-white">
-          <span className="text-indigo-400">A</span>gencia
-        </a>
+        <Logo />
 
         <button
           className="flex flex-col gap-1 md:hidden"

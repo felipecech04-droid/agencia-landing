@@ -76,7 +76,7 @@ export default function ChatWidget() {
               </svg>
             </div>
             <div>
-              <p className="text-sm font-semibold text-white">Agencia</p>
+              <p className="text-sm font-semibold text-white">Forja</p>
               <p className="text-xs text-indigo-200">En línea</p>
             </div>
           </div>

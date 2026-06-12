@@ -2,7 +2,7 @@ export default [
   {
     keywords: ["hola", "buenas", "buen día", "buenas tardes", "qué tal"],
     response:
-      "¡Hola! 👋 Soy el asistente de *Agencia*. Estoy aquí para ayudarte.\n\nPuedes escribirme:\n• *servicios* — Ver nuestro catálogo\n• *precio* — Info sobre costos\n• *cotizar* — Solicitar una cotización\n• *contacto* — Datos de contacto",
+      "¡Hola! 👋 Soy el asistente de *Forja*. Estoy aquí para ayudarte.\n\nPuedes escribirme:\n• *servicios* — Ver nuestro catálogo\n• *precio* — Info sobre costos\n• *cotizar* — Solicitar una cotización\n• *contacto* — Datos de contacto",
   },
   {
     keywords: ["servicio", "qué hacen", "ofrecen", "hacen", "desarrollo"],

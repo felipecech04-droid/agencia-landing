@@ -86,7 +86,7 @@ export default function AdminPage() {
       <header className="border-b border-white/10 bg-slate-900/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <h1 className="text-lg font-bold">
-            <span className="text-indigo-400">Admin</span> Dashboard
+            <span className="text-indigo-400">Forja</span> — Admin
           </h1>
           <button
             onClick={logout}

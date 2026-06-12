@@ -8,8 +8,13 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMxZjFmMmYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzR2LTRoNHY0aC00em0wIDB2LTRoLTR2NGg0em0wIDB2LTRoNHY0aC00em0wIDB2LTRoLTR2NGg0eiIvPjwvZz48L2c+PC9zdmc+')] opacity-20" />
 
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-        <div className="mb-6 inline-block rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-1.5 text-xs font-medium text-indigo-300">
-          Transformamos ideas en código
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-1.5 text-xs font-medium text-indigo-300">
+          <svg width="14" height="14" viewBox="0 0 48 48" fill="none" className="inline-block">
+            <rect x="4" y="4" width="40" height="40" rx="10" stroke="#6366f1" strokeWidth="2.5" fill="none" />
+            <path d="M16 16L24 24L16 32" stroke="#6366f1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M28 30H32" stroke="#6366f1" strokeWidth="2.5" strokeLinecap="round" />
+          </svg>
+          Forja — Transformamos ideas en código
         </div>
         <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">
           Desarrollo de{" "}
