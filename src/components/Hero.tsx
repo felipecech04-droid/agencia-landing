@@ -17,13 +17,13 @@ export default function Hero() {
           Forja — Transformamos ideas en código
         </div>
         <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">
-          Desarrollo de{" "}
+          Creamos{" "}
           <span className="bg-gradient-to-r from-indigo-400 to-cyan-300 bg-clip-text text-transparent">
-            Software
+            Programas .exe
           </span>
           ,{" "}
           <span className="bg-gradient-to-r from-cyan-300 to-indigo-400 bg-clip-text text-transparent">
-            Bots
+            Apps Web
           </span>{" "}
           y{" "}
           <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
@@ -31,9 +31,9 @@ export default function Hero() {
           </span>
         </h1>
         <p className="mx-auto mb-10 max-w-2xl text-lg text-slate-400">
-          Creamos soluciones digitales a la medida de tu negocio. Desde
-          aplicaciones web y chatbots inteligentes hasta automatizaciones que
-          impulsan tu crecimiento.
+          Desarrollamos software que sí se usa. Desde programas de escritorio
+          (.exe) y aplicaciones web hasta bots inteligentes — todo hecho a la
+          medida de tu negocio.
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a

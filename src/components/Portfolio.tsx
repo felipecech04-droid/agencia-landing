@@ -1,8 +1,8 @@
 const projects = [
   {
-    title: "Sistema de Facturación",
-    desc: "Plataforma web para gestión de facturas, clientes y reportes con dashboard en tiempo real.",
-    tags: ["React", "Node.js", "PostgreSQL"],
+    title: "Sistema de Facturación .exe",
+    desc: "Programa de escritorio para gestión de facturas, clientes y reportes. Instalable, rápido, sin necesidad de internet.",
+    tags: ["C#", ".NET", "SQLite"],
   },
   {
     title: "Chatbot para Ventas",
@@ -10,14 +10,14 @@ const projects = [
     tags: ["Python", "WhatsApp API", "OpenAI"],
   },
   {
-    title: "Automatización E-commerce",
-    desc: "Bot que sincroniza inventario entre tiendas online y genera reportes de ventas automáticos.",
-    tags: ["Python", "Selenium", "Google Sheets API"],
+    title: "App Web de Inventarios",
+    desc: "Plataforma web para control de stock, alertas de reorden y reportes en tiempo real desde cualquier dispositivo.",
+    tags: ["Next.js", "Node.js", "PostgreSQL"],
   },
   {
-    title: "Dashboard Financiero",
-    desc: "Panel de control con gráficos interactivos para monitorear ingresos, gastos y KPIs.",
-    tags: ["Next.js", "D3.js", "Supabase"],
+    title: "Dashboard Comercial",
+    desc: "Panel ejecutivo con gráficos interactivos de ventas, metas y rentabilidad. Versión web y escritorio.",
+    tags: ["React", "Electron", "Supabase"],
   },
 ];
 
