@@ -16,13 +16,13 @@ export type Lead = {
 
 function readData() {
   if (!existsSync(DATA_PATH)) {
-    writeFileSync(DATA_PATH, JSON.stringify({ password: "admin123", leads: [] }, null, 2));
-    return { password: "admin123", leads: [] as Lead[] };
+    writeFileSync(DATA_PATH, JSON.stringify({ leads: [] }, null, 2));
+    return { leads: [] as Lead[] };
   }
   return JSON.parse(readFileSync(DATA_PATH, "utf-8"));
 }
 
-function writeData(data: { password: string; leads: Lead[] }) {
+function writeData(data: { leads: Lead[] }) {
   writeFileSync(DATA_PATH, JSON.stringify(data, null, 2));
 }
 
@@ -53,5 +53,11 @@ export function updateLead(id: number, updates: Partial<Lead>) {
 }
 
 export function verifyPassword(pwd: string) {
-  return readData().password === pwd;
+  const envPassword = process.env.ADMIN_PASSWORD;
+  if (envPassword) return envPassword === pwd;
+  return pwd === "admin123";
+}
+
+export function getPassword() {
+  return process.env.ADMIN_PASSWORD || "admin123";
 }
