@@ -6,6 +6,7 @@ import Portfolio from "@/components/Portfolio";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ChatWidget from "@/components/ChatWidget";
+import DemoShowcase from "@/components/DemoShowcase";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Services />
         <About />
         <Portfolio />
+        <DemoShowcase />
         <Contact />
       </main>
       <Footer />
