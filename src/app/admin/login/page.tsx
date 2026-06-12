@@ -21,7 +21,6 @@ export default function LoginPage() {
     });
 
     if (res.ok) {
-      localStorage.setItem("admin_auth", "true");
       router.push("/admin");
     } else {
       setError("Contraseña incorrecta");
@@ -33,8 +32,15 @@ export default function LoginPage() {
     <div className="flex min-h-screen items-center justify-center bg-slate-950">
       <div className="w-full max-w-sm rounded-2xl border border-white/10 bg-slate-900 p-8">
         <div className="mb-8 text-center">
-          <h1 className="text-2xl font-bold text-white">Admin</h1>
-          <p className="mt-1 text-sm text-slate-400">Ingresa para gestionar tus leads</p>
+          <div className="mb-4 flex justify-center">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <rect x="4" y="4" width="40" height="40" rx="10" stroke="#6366f1" strokeWidth="2.5" fill="none" />
+              <path d="M16 16L24 24L16 32" stroke="#6366f1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M28 30H32" stroke="#6366f1" strokeWidth="2.5" strokeLinecap="round" />
+            </svg>
+          </div>
+          <h1 className="text-2xl font-bold text-white">Forja</h1>
+          <p className="mt-1 text-sm text-slate-400">Admin — Gestiona tus leads</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-5">

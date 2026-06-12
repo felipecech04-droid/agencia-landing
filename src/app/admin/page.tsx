@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 
 type Lead = {
   id: number;
@@ -31,15 +30,6 @@ export default function AdminPage() {
   const [leads, setLeads] = useState<Lead[]>([]);
   const [stats, setStats] = useState<Stats | null>(null);
   const [loading, setLoading] = useState(true);
-  const router = useRouter();
-
-  useEffect(() => {
-    if (localStorage.getItem("admin_auth") !== "true") {
-      router.push("/admin/login");
-      return;
-    }
-    fetchData();
-  }, [router]);
 
   const fetchData = async () => {
     const [leadsRes, statsRes] = await Promise.all([
@@ -51,6 +41,10 @@ export default function AdminPage() {
     setLoading(false);
   };
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   const updateStatus = async (id: number, status: Lead["status"]) => {
     await fetch("/api/admin/leads", {
       method: "PATCH",
@@ -60,9 +54,9 @@ export default function AdminPage() {
     fetchData();
   };
 
-  const logout = () => {
-    localStorage.removeItem("admin_auth");
-    router.push("/admin/login");
+  const logout = async () => {
+    await fetch("/api/admin/login", { method: "DELETE" });
+    window.location.href = "/admin/login";
   };
 
   const formatDate = (d: string) =>
@@ -85,9 +79,16 @@ export default function AdminPage() {
     <div className="min-h-screen bg-slate-950 text-white">
       <header className="border-b border-white/10 bg-slate-900/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <h1 className="text-lg font-bold">
-            <span className="text-indigo-400">Forja</span> — Admin
-          </h1>
+          <div className="flex items-center gap-3">
+            <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
+              <rect x="4" y="4" width="40" height="40" rx="10" stroke="#6366f1" strokeWidth="2.5" fill="none" />
+              <path d="M16 16L24 24L16 32" stroke="#6366f1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M28 30H32" stroke="#6366f1" strokeWidth="2.5" strokeLinecap="round" />
+            </svg>
+            <h1 className="text-lg font-bold">
+              <span className="text-indigo-400">Forja</span> — Admin
+            </h1>
+          </div>
           <button
             onClick={logout}
             className="rounded-lg border border-white/20 px-4 py-1.5 text-sm text-slate-300 transition-colors hover:border-red-400 hover:text-red-400"

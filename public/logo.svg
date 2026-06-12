@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="60" viewBox="0 0 200 60" fill="none">
+  <rect x="8" y="8" width="44" height="44" rx="10" stroke="#6366f1" stroke-width="2.5" fill="none"/>
+  <path d="M20 20L30 30L20 40" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M34 38H38" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="64" y="36" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#ffffff">Forja</text>
+  <text x="64" y="50" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#6366f1">FORJAMOS TU SOFTWARE</text>
+</svg>
