@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import FacebookPixel from "@/components/FacebookPixel";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,6 +46,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-slate-950 text-white">
         <FacebookPixel pixelId={process.env.NEXT_PUBLIC_FB_PIXEL || ""} />
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
