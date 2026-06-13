@@ -1,15 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 import FacebookPixel from "@/components/FacebookPixel";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const outfit = Outfit({
+  variable: "--font-sans",
   subsets: ["latin"],
 });
 
@@ -17,13 +12,13 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://agencia-landing.ve
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Forja - Desarrollo de Software, Bots y Chatbots",
+  title: "Forja — Taller de Software Artesanal",
   description:
-    "Forjamos soluciones digitales a la medida: software, chatbots inteligentes y automatizaciones para impulsar tu negocio.",
+    "Sistemas web, aplicaciones y chatbots hechos a la medida. Código forjado con precisión, no ensamblado con prisas.",
   openGraph: {
-    title: "Forja - Desarrollo de Software",
+    title: "Forja — Taller de Software Artesanal",
     description:
-      "Software, bots y chatbots a la medida de tu negocio.",
+      "Creamos sistemas web, aplicaciones y chatbots a la medida de tu negocio.",
     url: SITE_URL,
     siteName: "Forja",
     type: "website",
@@ -38,11 +33,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col bg-slate-950 text-white">
+    <html lang="es" className={`${outfit.variable} h-full`}>
+      <body className="noise min-h-dvh flex flex-col bg-slate-950 text-white font-sans antialiased">
         <FacebookPixel pixelId={process.env.NEXT_PUBLIC_FB_PIXEL || ""} />
         {children}
       </body>

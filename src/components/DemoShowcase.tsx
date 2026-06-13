@@ -48,7 +48,7 @@ export default function DemoShowcase() {
               key={d.title}
               className="group rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-all hover:border-indigo-500/50 hover:bg-white/[0.06]"
             >
-              <div className="mb-4 inline-flex rounded-xl bg-indigo-500/10 p-3 text-indigo-400 group-hover:text-indigo-300">
+              <div className="mb-4 inline-flex rounded-xl bg-amber-500/10 p-3 text-amber-400 group-hover:text-amber-300">
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d={d.icon} />
                 </svg>
@@ -62,7 +62,7 @@ export default function DemoShowcase() {
         <div className="mt-12 text-center">
           <a
             href="/sistema"
-            className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-indigo-600/30 transition-all hover:from-indigo-500 hover:to-indigo-400 hover:shadow-indigo-500/40"
+            className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-amber-600 to-amber-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-amber-600/30 transition-all hover:from-amber-500 hover:to-amber-400 hover:shadow-amber-500/40"
           >
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />

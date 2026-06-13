@@ -29,9 +29,9 @@ export default function SistemaLogin() {
         <div className="mb-8 text-center">
           <div className="mb-4 inline-flex items-center gap-2 text-lg font-bold text-white">
             <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
-              <rect x="4" y="4" width="40" height="40" rx="10" stroke="#6366f1" strokeWidth="2.5" fill="none" />
-              <path d="M16 16L24 24L16 32" stroke="#6366f1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M28 30H32" stroke="#6366f1" strokeWidth="2.5" strokeLinecap="round" />
+              <rect x="4" y="4" width="40" height="40" rx="10" stroke="#d97706" strokeWidth="2.5" fill="none" />
+              <path d="M16 16L24 24L16 32" stroke="#d97706" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M28 30H32" stroke="#d97706" strokeWidth="2.5" strokeLinecap="round" />
             </svg>
             Forja
           </div>
@@ -46,7 +46,7 @@ export default function SistemaLogin() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/20"
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-white outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/20"
               placeholder="Ingresa la contraseña"
               autoFocus
             />
@@ -58,7 +58,7 @@ export default function SistemaLogin() {
 
           <button
             type="submit"
-            className="w-full rounded-xl bg-indigo-600 px-4 py-2.5 font-medium text-white transition hover:bg-indigo-500"
+            className="w-full rounded-xl bg-amber-600 px-4 py-2.5 font-medium text-white transition hover:bg-amber-500"
           >
             Ingresar
           </button>

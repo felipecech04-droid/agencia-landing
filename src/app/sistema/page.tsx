@@ -19,7 +19,7 @@ export default function SistemaDashboard() {
   const productosBajos = data.productos.filter((p) => p.stock <= p.stockMinimo).length;
 
   const stats = [
-    { label: "Facturas Emitidas", value: data.facturas.length, sub: `${facturasPagadas.length} pagadas`, color: "from-indigo-500 to-blue-500" },
+    { label: "Facturas Emitidas", value: data.facturas.length, sub: `${facturasPagadas.length} pagadas`, color: "from-amber-500 to-blue-500" },
     { label: "Ingresos Totales", value: moneda(totalIngresos), sub: `${data.facturas.length - facturasPagadas.length - data.facturas.filter(f => f.estado === 'cancelada').length} pendientes`, color: "from-emerald-500 to-teal-500" },
     { label: "Productos", value: data.productos.length, sub: `${productosBajos} con stock bajo`, color: "from-amber-500 to-orange-500" },
     { label: "Tickets Abiertos", value: ticketsAbiertos, sub: `${data.tickets.filter(t => t.estado === 'resuelto').length} resueltos`, color: "from-rose-500 to-pink-500" },
@@ -52,14 +52,14 @@ export default function SistemaDashboard() {
       <div className="grid gap-5 sm:grid-cols-2">
         {cards.map((c) => (
           <Link key={c.href} href={c.href}
-            className="group rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-all hover:border-indigo-500/40 hover:bg-white/[0.06]"
+            className="group rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-all hover:border-amber-500/40 hover:bg-white/[0.06]"
           >
-            <div className="mb-4 inline-flex rounded-xl bg-indigo-500/10 p-3 text-indigo-400">
+            <div className="mb-4 inline-flex rounded-xl bg-amber-500/10 p-3 text-amber-400">
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d={c.icon} />
               </svg>
             </div>
-            <h3 className="mb-1 text-lg font-semibold text-white group-hover:text-indigo-300">{c.title}</h3>
+            <h3 className="mb-1 text-lg font-semibold text-white group-hover:text-amber-300">{c.title}</h3>
             <p className="text-sm text-slate-400">{c.desc}</p>
           </Link>
         ))}

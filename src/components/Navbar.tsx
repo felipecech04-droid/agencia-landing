@@ -41,7 +41,7 @@ export default function Navbar() {
           ))}
           <a
             href="#contacto"
-            className="rounded-lg bg-indigo-600 px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-indigo-500"
+            className="rounded-lg bg-amber-600 px-5 py-2 text-sm font-medium text-white transition-all hover:bg-amber-500 hover:shadow-lg hover:shadow-amber-600/30"
           >
             Cotizar
           </a>
@@ -63,7 +63,7 @@ export default function Navbar() {
           <a
             href="#contacto"
             onClick={() => setOpen(false)}
-            className="inline-block rounded-lg bg-indigo-600 px-5 py-2 text-center text-sm font-medium text-white"
+            className="inline-block rounded-lg bg-amber-600 px-5 py-2 text-center text-sm font-medium text-white"
           >
             Cotizar
           </a>

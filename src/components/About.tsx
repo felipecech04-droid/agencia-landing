@@ -20,8 +20,8 @@ export default function About() {
                 ["Soporte post-entrega", "No te abandonamos. Garantizamos acompañamiento después del lanzamiento."],
               ].map(([title, desc]) => (
                 <div key={title} className="flex gap-4">
-                  <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-indigo-500/20">
-                    <svg className="h-3 w-3 text-indigo-400" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-500/20">
+                    <svg className="h-3 w-3 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                   </div>
@@ -34,15 +34,15 @@ export default function About() {
             </div>
           </div>
           <div className="relative">
-            <div className="aspect-square rounded-2xl border border-white/10 bg-gradient-to-br from-indigo-900/30 to-slate-800/30 p-8">
+            <div className="aspect-square rounded-2xl border border-white/10 bg-gradient-to-br from-amber-900/20 to-slate-800/30 p-8">
               <div className="flex h-full flex-col items-center justify-center text-center">
-                <div className="mb-4 text-5xl font-bold text-indigo-400">5+</div>
+                <div className="mb-4 text-5xl font-bold text-amber-400">5+</div>
                 <p className="text-sm text-slate-400">Años de experiencia</p>
                 <div className="my-6 h-px w-16 bg-white/10" />
-                <div className="mb-4 text-5xl font-bold text-indigo-400">20+</div>
+                <div className="mb-4 text-5xl font-bold text-amber-400">20+</div>
                 <p className="text-sm text-slate-400">Proyectos entregados</p>
                 <div className="my-6 h-px w-16 bg-white/10" />
-                <div className="mb-4 text-5xl font-bold text-indigo-400">100%</div>
+                <div className="mb-4 text-5xl font-bold text-amber-400">100%</div>
                 <p className="text-sm text-slate-400">Clientes satisfechos</p>
               </div>
             </div>

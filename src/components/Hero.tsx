@@ -2,59 +2,75 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-slate-950"
+      className="relative min-h-[100dvh] flex items-center overflow-hidden bg-slate-950"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-900/40 via-slate-950 to-slate-950" />
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMxZjFmMmYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzR2LTRoNHY0aC00em0wIDB2LTRoLTR2NGg0em0wIDB2LTRoNHY0aC00em0wIDB2LTRoLTR2NGg0eiIvPjwvZz48L2c+PC9zdmc+')] opacity-20" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-amber-900/15 via-slate-950 to-slate-950" />
+      <div className="absolute top-1/4 -right-32 h-[500px] w-[500px] rounded-full bg-amber-500/5 blur-[120px]" />
+      <div className="absolute -bottom-32 -left-32 h-[400px] w-[400px] rounded-full bg-amber-600/5 blur-[100px]" />
 
-      <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-1.5 text-xs font-medium text-indigo-300">
-          <svg width="14" height="14" viewBox="0 0 48 48" fill="none" className="inline-block">
-            <rect x="4" y="4" width="40" height="40" rx="10" stroke="#6366f1" strokeWidth="2.5" fill="none" />
-            <path d="M16 16L24 24L16 32" stroke="#6366f1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M28 30H32" stroke="#6366f1" strokeWidth="2.5" strokeLinecap="round" />
-          </svg>
-          Forja — Transformamos ideas en código
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
+        <div className="max-w-3xl">
+          <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-amber-500/20 bg-amber-500/5 px-4 py-1.5 text-xs font-medium tracking-wide text-amber-400/80 uppercase">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-amber-500 animate-pulse" />
+            Taller de software artesanal
+          </div>
+
+          <h1 className="mt-6 text-7xl font-black leading-[0.85] tracking-tighter text-white sm:text-8xl md:text-[9rem] lg:text-[11rem] select-none">
+            FORJA
+          </h1>
+
+          <div className="mt-4 flex items-center gap-3">
+            <span className="h-1 w-20 rounded-full bg-gradient-to-r from-amber-500 to-amber-400" />
+            <span className="text-sm font-medium uppercase tracking-[0.2em] text-slate-500">
+              Desde 2024
+            </span>
+          </div>
+
+          <p className="mt-8 max-w-xl text-lg leading-relaxed text-slate-400">
+            Creamos sistemas web, aplicaciones y chatbots a la medida de tu
+            negocio. Código forjado con precisión, no ensamblado con prisas.
+          </p>
+
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <a
+              href="#contacto"
+              className="group inline-flex items-center gap-2 rounded-xl bg-amber-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-amber-600/25 transition-all hover:bg-amber-500 hover:shadow-amber-500/40 hover:scale-[1.02]"
+            >
+              Iniciar Proyecto
+              <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+            <a
+              href="#servicios"
+              className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-8 py-3.5 text-base font-medium text-slate-300 transition-all hover:border-amber-500/40 hover:text-white"
+            >
+              Ver Servicios
+            </a>
+          </div>
         </div>
-        <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">
-          Creamos{" "}
-          <span className="bg-gradient-to-r from-indigo-400 to-cyan-300 bg-clip-text text-transparent">
-            Sistemas Web
-          </span>
-          ,{" "}
-          <span className="bg-gradient-to-r from-cyan-300 to-indigo-400 bg-clip-text text-transparent">
-            Apps
-          </span>{" "}
-          y{" "}
-          <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-            Chatbots
-          </span>
-        </h1>
-        <p className="mx-auto mb-10 max-w-2xl text-lg text-slate-400">
-          Desarrollamos software que sí se usa. Desde aplicaciones web y
-          chatbots inteligentes hasta automatizaciones que impulsan tu
-          crecimiento.
-        </p>
-        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a
-            href="#contacto"
-            className="rounded-xl bg-indigo-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-indigo-600/30 transition-all hover:bg-indigo-500 hover:shadow-indigo-500/40"
-          >
-            Contáctanos
-          </a>
-          <a
-            href="#servicios"
-            className="rounded-xl border border-white/20 px-8 py-3.5 text-base font-medium text-slate-300 transition-all hover:border-white/40 hover:text-white"
-          >
-            Ver Servicios
-          </a>
+
+        <div className="mt-16 grid grid-cols-3 gap-8 border-t border-white/5 pt-8 sm:grid-cols-3 md:max-w-lg">
+          {[
+            ["5+", "Años forjando"],
+            ["20+", "Proyectos entregados"],
+            ["100%", "Clientes satisfechos"],
+          ].map(([num, label]) => (
+            <div key={num}>
+              <p className="text-2xl font-bold text-amber-400/90">{num}</p>
+              <p className="text-xs text-slate-500 uppercase tracking-wider">{label}</p>
+            </div>
+          ))}
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <svg className="h-6 w-6 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+        <div className="flex flex-col items-center gap-2 animate-pulse-glow">
+          <span className="h-8 w-px bg-gradient-to-b from-amber-500/40 to-transparent" />
+          <svg className="h-4 w-4 text-amber-500/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7" />
+          </svg>
+        </div>
       </div>
     </section>
   );

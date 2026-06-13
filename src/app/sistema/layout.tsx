@@ -29,12 +29,12 @@ export default function SistemaLayout({ children }: { children: React.ReactNode 
       <aside className={`fixed inset-y-0 left-0 z-40 w-64 border-r border-white/10 bg-slate-900/80 backdrop-blur-xl transition-transform lg:static lg:translate-x-0 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}>
         <div className="flex h-16 items-center gap-2 border-b border-white/10 px-6">
           <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
-            <rect x="4" y="4" width="40" height="40" rx="10" stroke="#6366f1" strokeWidth="2.5" fill="none" />
-            <path d="M16 16L24 24L16 32" stroke="#6366f1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M28 30H32" stroke="#6366f1" strokeWidth="2.5" strokeLinecap="round" />
+            <rect x="4" y="4" width="40" height="40" rx="10" stroke="#d97706" strokeWidth="2.5" fill="none" />
+            <path d="M16 16L24 24L16 32" stroke="#d97706" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M28 30H32" stroke="#d97706" strokeWidth="2.5" strokeLinecap="round" />
           </svg>
           <span className="text-lg font-bold text-white">Forja</span>
-          <span className="rounded-md bg-indigo-500/10 px-1.5 py-0.5 text-[10px] font-medium text-indigo-400">Demo</span>
+          <span className="rounded-md bg-amber-500/10 px-1.5 py-0.5 text-[10px] font-medium text-amber-400">Demo</span>
         </div>
 
         <nav className="flex-1 space-y-1 p-3">
@@ -47,7 +47,7 @@ export default function SistemaLayout({ children }: { children: React.ReactNode 
                 onClick={() => setSidebarOpen(false)}
                 className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all ${
                   active
-                    ? "bg-indigo-600/20 text-indigo-300"
+                    ? "bg-amber-600/20 text-amber-300"
                     : "text-slate-400 hover:bg-white/5 hover:text-white"
                 }`}
               >
