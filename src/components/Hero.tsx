@@ -19,11 +19,11 @@ export default function Hero() {
         <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">
           Creamos{" "}
           <span className="bg-gradient-to-r from-indigo-400 to-cyan-300 bg-clip-text text-transparent">
-            Programas .exe
+            Sistemas Web
           </span>
           ,{" "}
           <span className="bg-gradient-to-r from-cyan-300 to-indigo-400 bg-clip-text text-transparent">
-            Apps Web
+            Apps
           </span>{" "}
           y{" "}
           <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
@@ -31,9 +31,9 @@ export default function Hero() {
           </span>
         </h1>
         <p className="mx-auto mb-10 max-w-2xl text-lg text-slate-400">
-          Desarrollamos software que sí se usa. Desde programas de escritorio
-          (.exe) y aplicaciones web hasta bots inteligentes — todo hecho a la
-          medida de tu negocio.
+          Desarrollamos software que sí se usa. Desde aplicaciones web y
+          chatbots inteligentes hasta automatizaciones que impulsan tu
+          crecimiento.
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a

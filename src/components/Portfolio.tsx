@@ -1,8 +1,8 @@
 const projects = [
   {
-    title: "Sistema de Facturación .exe",
-    desc: "Programa de escritorio para gestión de facturas, clientes y reportes. Instalable, rápido, sin necesidad de internet.",
-    tags: ["C#", ".NET", "SQLite"],
+    title: "Sistema de Facturación",
+    desc: "Plataforma web para gestión de facturas, clientes y reportes con dashboard en tiempo real.",
+    tags: ["React", "Node.js", "PostgreSQL"],
   },
   {
     title: "Chatbot para Ventas",
@@ -16,8 +16,8 @@ const projects = [
   },
   {
     title: "Dashboard Comercial",
-    desc: "Panel ejecutivo con gráficos interactivos de ventas, metas y rentabilidad. Versión web y escritorio.",
-    tags: ["React", "Electron", "Supabase"],
+    desc: "Panel ejecutivo con gráficos interactivos de ventas, metas y rentabilidad. Acceso desde cualquier dispositivo.",
+    tags: ["React", "Next.js", "Supabase"],
   },
 ];
 

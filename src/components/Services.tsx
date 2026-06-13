@@ -1,7 +1,7 @@
 const services = [
   {
-    title: "Programas .exe",
-    desc: "Software de escritorio, sistemas administrativos, facturación, inventarios y más. Tu propio programa instalable listo para usar.",
+    title: "Sistemas Web",
+    desc: "Dashboards, plataformas SaaS, tiendas online, sistemas administrativos — accesibles desde cualquier navegador.",
     icon: (
       <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -9,8 +9,8 @@ const services = [
     ),
   },
   {
-    title: "Aplicaciones Web",
-    desc: "Dashboards, plataformas SaaS, tiendas online, sistemas de gestión — accesibles desde cualquier navegador, siempre actualizadas.",
+    title: "Apps a la Medida",
+    desc: "Aplicaciones web progresivas, dashboards, plataformas SaaS y más. Construimos con tecnologías modernas y escalables.",
     icon: (
       <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
