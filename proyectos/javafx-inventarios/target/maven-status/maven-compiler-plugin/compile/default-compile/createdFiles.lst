@@ -1,0 +1,10 @@
+com\forja\inventarios\controller\MovementsController.class
+com\forja\inventarios\controller\ProductsController.class
+com\forja\inventarios\service\DatabaseService.class
+com\forja\inventarios\controller\ProductsController$1.class
+com\forja\inventarios\UtilStyles.class
+com\forja\inventarios\App.class
+com\forja\inventarios\model\Category.class
+com\forja\inventarios\controller\DashboardController.class
+com\forja\inventarios\model\Movement.class
+com\forja\inventarios\model\Product.class

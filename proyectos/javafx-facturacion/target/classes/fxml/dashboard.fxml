@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox spacing="20" styleClass="content-area" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.forja.facturacion.controller.DashboardController">
+    <padding><Insets top="20" right="30" bottom="20" left="30"/></padding>
+    <VBox styleClass="page-header">
+        <Label text="Dashboard" styleClass="label-title" />
+        <Label text="Resumen del sistema de facturación" style="-fx-text-fill: #64748b; -fx-font-size: 13px;" />
+    </VBox>
+
+    <GridPane fx:id="statsGrid" hgap="15" vgap="15">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="25" />
+            <ColumnConstraints percentWidth="25" />
+            <ColumnConstraints percentWidth="25" />
+            <ColumnConstraints percentWidth="25" />
+        </columnConstraints>
+
+        <!-- Card 1: Total Clients -->
+        <VBox styleClass="card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <Label text="CLIENTES" styleClass="card-title" />
+            <Text fx:id="totalClients" styleClass="card-value" style="-fx-fill: #d97706;" />
+            <Label text="Registrados en el sistema" style="-fx-text-fill: #64748b; -fx-font-size: 11px; -fx-padding: 5 0 0 0;" />
+        </VBox>
+
+        <!-- Card 2: Total Invoices -->
+        <VBox styleClass="card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <Label text="FACTURAS" styleClass="card-title" />
+            <Text fx:id="totalInvoices" styleClass="card-value" style="-fx-fill: white;" />
+            <Label text="Total de facturas emitidas" style="-fx-text-fill: #64748b; -fx-font-size: 11px; -fx-padding: 5 0 0 0;" />
+        </VBox>
+
+        <!-- Card 3: Paid Total -->
+        <VBox styleClass="card" GridPane.columnIndex="2" GridPane.rowIndex="0">
+            <Label text="COBRADO" styleClass="card-title" />
+            <Text fx:id="paidTotal" styleClass="card-value" style="-fx-fill: #22c55e;" />
+            <Label text="Total de facturas pagadas" style="-fx-text-fill: #64748b; -fx-font-size: 11px; -fx-padding: 5 0 0 0;" />
+        </VBox>
+
+        <!-- Card 4: Pending Total -->
+        <VBox styleClass="card" GridPane.columnIndex="3" GridPane.rowIndex="0">
+            <Label text="PENDIENTE" styleClass="card-title" />
+            <Text fx:id="pendingTotal" styleClass="card-value" style="-fx-fill: #ef4444;" />
+            <Label text="Total de facturas pendientes" style="-fx-text-fill: #64748b; -fx-font-size: 11px; -fx-padding: 5 0 0 0;" />
+        </VBox>
+    </GridPane>
+</VBox>

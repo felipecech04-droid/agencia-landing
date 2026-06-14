@@ -1,27 +1,31 @@
 const projects = [
   {
     title: "Sistema de Facturación",
-    desc: "Plataforma web para gestión de facturas, clientes y reportes con dashboard en tiempo real.",
-    tags: ["React", "Node.js", "PostgreSQL"],
-    stat: "+15K facturas/mes",
+    type: "Desktop",
+    typeColor: "text-amber-400 border-amber-500/20",
+    desc: "Aplicación de escritorio JavaFX con SQLite. Gestión de clientes, facturas con items, cálculo automático de IVA, exportación PDF y dashboard financiero.",
+    tags: ["JavaFX", "SQLite", "Maven"],
   },
   {
-    title: "Chatbot para Ventas",
-    desc: "Bot de WhatsApp con IA que califica leads, responde preguntas frecuentes y agenda citas.",
-    tags: ["Python", "WhatsApp API", "OpenAI"],
-    stat: "70% leads calificados",
+    title: "Gestión de Inventarios",
+    type: "Desktop",
+    typeColor: "text-amber-400 border-amber-500/20",
+    desc: "Aplicación de escritorio JavaFX para control de stock. Productos, movimientos de entrada/salida, alertas de stock bajo y reportes.",
+    tags: ["JavaFX", "SQLite", "Maven"],
   },
   {
-    title: "App Web de Inventarios",
-    desc: "Plataforma web para control de stock, alertas de reorden y reportes en tiempo real.",
-    tags: ["Next.js", "Node.js", "PostgreSQL"],
-    stat: "99.9% uptime",
+    title: "CRM de Ventas",
+    type: "Web",
+    typeColor: "text-emerald-400 border-emerald-500/20",
+    desc: "Aplicación web full-stack con React y Node.js. Pipeline kanban, gestión de leads, tareas y dashboard de conversión.",
+    tags: ["React", "Node.js", "SQLite"],
   },
   {
-    title: "Dashboard Comercial",
-    desc: "Panel ejecutivo con gráficos interactivos de ventas, metas y rentabilidad.",
-    tags: ["React", "Next.js", "Supabase"],
-    stat: "3min → 30s reportes",
+    title: "Panel de Proyectos",
+    type: "Web",
+    typeColor: "text-emerald-400 border-emerald-500/20",
+    desc: "Aplicación web full-stack con React y Node.js. Gestión de proyectos con tareas, kanban board y asignación de equipo.",
+    tags: ["React", "Node.js", "Express"],
   },
 ];
 
@@ -53,13 +57,13 @@ export default function Portfolio() {
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <span className="text-xs font-mono text-slate-600">0{i + 1}</span>
-                  <h3 className="mt-1 text-lg font-bold text-white group-hover:text-amber-400 transition-colors">
+                  <span className={`ml-2 rounded-full border px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider ${p.typeColor}`}>
+                    {p.type}
+                  </span>
+                  <h3 className="mt-2 text-lg font-bold text-white group-hover:text-amber-400 transition-colors">
                     {p.title}
                   </h3>
                 </div>
-                <span className="shrink-0 rounded-full bg-amber-500/5 px-3 py-1 text-xs font-medium text-amber-400/70">
-                  {p.stat}
-                </span>
               </div>
               <p className="mt-3 text-sm leading-relaxed text-slate-400">
                 {p.desc}

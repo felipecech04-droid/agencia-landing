@@ -1,0 +1,11 @@
+com\forja\facturacion\util\PDFExporter.class
+com\forja\facturacion\controller\ClientsController.class
+com\forja\facturacion\controller\InvoicesController$StatusCell.class
+com\forja\facturacion\model\InvoiceItem.class
+com\forja\facturacion\controller\InvoicesController$CurrencyCell.class
+com\forja\facturacion\App.class
+com\forja\facturacion\controller\InvoicesController.class
+com\forja\facturacion\model\Client.class
+com\forja\facturacion\model\Invoice.class
+com\forja\facturacion\service\DatabaseService.class
+com\forja\facturacion\controller\DashboardController.class
