@@ -1,26 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { checkAdminAuth, logoutAdmin } from "@/lib/client-auth";
+import { getLeads, updateLead, getStats, type Lead } from "@/lib/client-store";
+import { useRouter } from "next/navigation";
 
-type Lead = {
-  id: number;
-  name: string;
-  phone: string;
-  email?: string;
-  service: string;
-  message: string;
-  date: string;
-  status: "nuevo" | "contactado" | "cerrado";
-};
+type Stats = { total: number; nuevos: number; contactados: number; cerrados: number };
 
-type Stats = {
-  total: number;
-  nuevos: number;
-  contactados: number;
-  cerrados: number;
-};
-
-const statusColors = {
+const statusColors: Record<string, string> = {
   nuevo: "bg-yellow-500/10 text-yellow-400 border-yellow-500/30",
   contactado: "bg-blue-500/10 text-blue-400 border-blue-500/30",
   cerrado: "bg-green-500/10 text-green-400 border-green-500/30",
@@ -30,33 +17,27 @@ export default function AdminPage() {
   const [leads, setLeads] = useState<Lead[]>([]);
   const [stats, setStats] = useState<Stats | null>(null);
   const [loading, setLoading] = useState(true);
-
-  const fetchData = async () => {
-    const [leadsRes, statsRes] = await Promise.all([
-      fetch("/api/admin/leads"),
-      fetch("/api/admin/stats"),
-    ]);
-    if (leadsRes.ok) setLeads(await leadsRes.json());
-    if (statsRes.ok) setStats(await statsRes.json());
-    setLoading(false);
-  };
+  const router = useRouter();
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    if (!checkAdminAuth()) {
+      router.replace("/admin/login");
+      return;
+    }
+    setLeads(getLeads());
+    setStats(getStats());
+    setLoading(false);
+  }, [router]);
 
-  const updateStatus = async (id: number, status: Lead["status"]) => {
-    await fetch("/api/admin/leads", {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id, status }),
-    });
-    fetchData();
+  const handleUpdate = (id: number, status: Lead["status"]) => {
+    updateLead(id, { status });
+    setLeads(getLeads());
+    setStats(getStats());
   };
 
-  const logout = async () => {
-    await fetch("/api/admin/login", { method: "DELETE" });
-    window.location.href = "/admin/login";
+  const handleLogout = () => {
+    logoutAdmin();
+    router.push("/admin/login");
   };
 
   const formatDate = (d: string) =>
@@ -80,17 +61,15 @@ export default function AdminPage() {
       <header className="border-b border-white/10 bg-slate-900/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-3">
-            <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
-              <rect x="4" y="4" width="40" height="40" rx="10" stroke="#6366f1" strokeWidth="2.5" fill="none" />
-              <path d="M16 16L24 24L16 32" stroke="#6366f1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M28 30H32" stroke="#6366f1" strokeWidth="2.5" strokeLinecap="round" />
+            <svg width="28" height="28" viewBox="0 0 48 48" fill="none" className="text-amber-500">
+              <rect x="4" y="4" width="40" height="40" rx="10" stroke="currentColor" strokeWidth="2.5" fill="none" />
+              <path d="M16 16L24 24L16 32" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M28 30H32" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
             </svg>
-            <h1 className="text-lg font-bold">
-              <span className="text-indigo-400">Forja</span> — Admin
-            </h1>
+            <span className="text-lg font-bold text-white">Forja — Admin</span>
           </div>
           <button
-            onClick={logout}
+            onClick={handleLogout}
             className="rounded-lg border border-white/20 px-4 py-1.5 text-sm text-slate-300 transition-colors hover:border-red-400 hover:text-red-400"
           >
             Salir
@@ -102,15 +81,12 @@ export default function AdminPage() {
         {stats && (
           <div className="mb-10 grid gap-4 sm:grid-cols-4">
             {[
-              { label: "Total Leads", value: stats.total, color: "text-indigo-400" },
+              { label: "Total Leads", value: stats.total, color: "text-amber-400" },
               { label: "Nuevos", value: stats.nuevos, color: "text-yellow-400" },
               { label: "Contactados", value: stats.contactados, color: "text-blue-400" },
               { label: "Cerrados", value: stats.cerrados, color: "text-green-400" },
             ].map((s) => (
-              <div
-                key={s.label}
-                className="rounded-xl border border-white/10 bg-white/[0.03] px-6 py-5"
-              >
+              <div key={s.label} className="rounded-xl border border-white/10 bg-white/[0.03] px-6 py-5">
                 <p className="text-sm text-slate-400">{s.label}</p>
                 <p className={`text-3xl font-bold ${s.color}`}>{s.value}</p>
               </div>
@@ -133,16 +109,12 @@ export default function AdminPage() {
                 </tr>
               </thead>
               <tbody>
-                {leads.length === 0 && (
-                  <tr>
-                    <td colSpan={7} className="px-5 py-12 text-center text-slate-500">
-                      No hay leads aún. Cuando alguien te contacte desde la web o WhatsApp, aparecerán aquí.
-                    </td>
-                  </tr>
-                )}
                 {leads.map((lead) => (
-                  <tr key={lead.id} className="border-b border-white/5 transition-colors hover:bg-white/[0.02]">
-                    <td className="px-5 py-4 text-slate-400 whitespace-nowrap">
+                  <tr
+                    key={lead.id}
+                    className="border-b border-white/5 transition-colors hover:bg-white/[0.02]"
+                  >
+                    <td className="whitespace-nowrap px-5 py-4 text-slate-400">
                       {formatDate(lead.date)}
                     </td>
                     <td className="px-5 py-4 font-medium">{lead.name}</td>
@@ -161,8 +133,10 @@ export default function AdminPage() {
                     <td className="px-5 py-4">
                       <select
                         value={lead.status}
-                        onChange={(e) => updateStatus(lead.id, e.target.value as Lead["status"])}
-                        className="rounded-lg border border-white/10 bg-white/5 px-2 py-1 text-xs text-slate-300 outline-none focus:border-indigo-500"
+                        onChange={(e) =>
+                          handleUpdate(lead.id, e.target.value as Lead["status"])
+                        }
+                        className="rounded-lg border border-white/10 bg-white/5 px-2 py-1 text-xs text-slate-300 outline-none focus:border-amber-500"
                       >
                         <option value="nuevo">Nuevo</option>
                         <option value="contactado">Contactado</option>
@@ -171,6 +145,13 @@ export default function AdminPage() {
                     </td>
                   </tr>
                 ))}
+                {leads.length === 0 && (
+                  <tr>
+                    <td colSpan={7} className="px-5 py-8 text-center text-slate-500">
+                      No hay leads todavía. Los leads llegarán aquí desde el formulario de contacto.
+                    </td>
+                  </tr>
+                )}
               </tbody>
             </table>
           </div>

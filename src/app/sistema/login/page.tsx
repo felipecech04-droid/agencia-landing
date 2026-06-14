@@ -2,21 +2,17 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { loginSistema } from "@/lib/client-auth";
 
 export default function SistemaLogin() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const router = useRouter();
 
-  async function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError("");
-    const res = await fetch("/api/sistema-login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ password }),
-    });
-    if (res.ok) {
+    if (loginSistema(password)) {
       router.push("/sistema");
     } else {
       setError("Contraseña incorrecta");
@@ -27,21 +23,24 @@ export default function SistemaLogin() {
     <div className="flex min-h-screen items-center justify-center bg-slate-950">
       <div className="w-full max-w-sm rounded-2xl border border-white/10 bg-white/[0.03] p-8">
         <div className="mb-8 text-center">
-          <div className="mb-4 inline-flex items-center gap-2 text-lg font-bold text-white">
-            <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
+          <div className="mb-3 flex justify-center">
+            <svg width="40" height="40" viewBox="0 0 48 48" fill="none">
               <rect x="4" y="4" width="40" height="40" rx="10" stroke="#d97706" strokeWidth="2.5" fill="none" />
               <path d="M16 16L24 24L16 32" stroke="#d97706" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
               <path d="M28 30H32" stroke="#d97706" strokeWidth="2.5" strokeLinecap="round" />
             </svg>
-            Forja
           </div>
           <h1 className="text-xl font-semibold text-white">Sistemas Demo</h1>
-          <p className="mt-1 text-sm text-slate-400">Ingresa para ver los sistemas en acción</p>
+          <p className="mt-1 text-sm text-slate-400">
+            Ingresa para ver los sistemas en acción
+          </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="mb-1.5 block text-sm font-medium text-slate-300">Contraseña</label>
+            <label className="mb-1.5 block text-sm font-medium text-slate-300">
+              Contraseña
+            </label>
             <input
               type="password"
               value={password}
@@ -53,7 +52,9 @@ export default function SistemaLogin() {
           </div>
 
           {error && (
-            <p className="rounded-lg bg-red-500/10 px-3 py-2 text-sm text-red-400">{error}</p>
+            <p className="rounded-lg bg-red-500/10 px-3 py-2 text-sm text-red-400">
+              {error}
+            </p>
           )}
 
           <button
@@ -63,7 +64,9 @@ export default function SistemaLogin() {
             Ingresar
           </button>
 
-          <p className="text-center text-xs text-slate-500">Demo: <span className="font-mono text-slate-400">demo2024</span></p>
+          <p className="text-center text-xs text-slate-500">
+            Demo: <span className="font-mono text-slate-400">demo2024</span>
+          </p>
         </form>
       </div>
     </div>
